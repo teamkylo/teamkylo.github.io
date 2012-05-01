@@ -13,6 +13,7 @@ safe: true
 #
 title : Team Kylo
 tagline: Kylo Browser Dev Team
+logo: /assets/teamkylo_logo.png
 author :
   name : Hillcrest Labs
   url : http://hillcrestlabs.com

@@ -1,0 +1,12 @@
+---
+layout: page
+title: "Blog"
+header: "Blog"
+group: navigation
+---
+{% include JB/setup %}
+
+<ul>
+{% assign posts_collate = site.posts %}
+{% include JB/posts_collate %}
+</ul>

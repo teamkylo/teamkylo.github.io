@@ -6,14 +6,12 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
 
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">   
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <![endif]-->    
 
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
@@ -26,35 +24,83 @@
 
   <body>
 
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>          
+          {% if site.logo %}
+          <a class="brand logo" href="{{ HOME_PATH }}">   
+            <img src="{{ site.logo }}" alt="{{ site.title }}" height="40"/>
+          </a>
+          {% else %}
+          <a class="brand" href="{{ HOME_PATH }}">   
+            {{ site.title }}
+          </a>
+          {% endif %}
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              {% assign pages_list = site.pages %}
+              {% assign group = 'navigation' %}
+              {% include JB/pages_list %}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container">
-
-      <div class="content">
-        {{ content }}
-      </div>
+      
+      {{ content }}
 
       <footer>
         <p>&copy; 2012
             {% if site.author.url %}<a href="{{ site.author.url }}" target="new">{{ site.author.name }}</a>{% else %}
-            {{ site.author.name }}{% endif %}  
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+            {{ site.author.name }}{% endif %}
         </p>
-      </footer>
+        <p>Powered by <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>,
+          <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, and
+          <a href="http://github.com/vwall/compass-twitter-bootstrap" target="_blank">compass-twitter-bootstrap</a>
+        </p>
+      </footer>  
 
-    </div> <!-- /container -->
+    </div> <!-- /container -->      
+    
+    <!-- Le javascript        
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="application/javascript"></script>
+    <script src="{{ ASSET_PATH }}/js/bootstrap.min.js" type="application/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(
+  function() {
+    $.YQL = function(query, callback) {
+        var encodedQuery = encodeURIComponent(query.toLowerCase()),
+            url = 'http://query.yahooapis.com/v1/public/yql?q='
+                + encodedQuery + '&format=json&callback=?';
+        $.getJSON(url, callback);
+    };
+    
+    if ($("#rssWidget").length > 0 &&
+        $("#rssWidgetHost").length > 0) {
+      
+      $.YQL("select * from atom where url='https://github.com/organizations/teamkylo/kwood1138.private.atom?token=83a7b5894bfce6f4b5b4d03b07974b1f' limit 3",
+        function(data){
+          var blogPost=data.query.results.entry;
+          $.each(blogPost,function(index, blogPost){
+            $('#rssWidget').append("<li><a href='"+blogPost.link.href+"'>"+blogPost.title.content+"</a></li>");
+          });
+          $('#rssWidgetHost').fadeIn('slow');  
+        });  
+      
+    };
+  }
+)
+</script>
 
     {% include JB/analytics %}
   </body>
