@@ -1,11 +1,19 @@
-<div class="page-header">
-  <h1>{{ page.title }} <small>Supporting tagline</small></h1>
+<div class="row-fluid">
+  <div class="span8">
+    {% include JB/sharing %}
+  </div>
 </div>
 
-<div class="row">
+<div class="page-header">
+  <h1>{{ page.title }} 
+    {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}
+  </h1>
+</div>
+
+<div class="row-fluid">
   <div class="span8">
     {{ content }}
-    <hr>
+    <hr/>
     <div class="pagination">
       <ul>
       {% if page.previous %}
@@ -21,7 +29,7 @@
       {% endif %}
       </ul>
     </div>
-    <hr>
+    <hr/>
     {% include JB/comments %}
   </div>
   
