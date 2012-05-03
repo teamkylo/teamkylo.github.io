@@ -8,6 +8,10 @@ sass_dir = "_sass"
 images_dir = "assets/themes/twitter-kylo/images"
 javascripts_dir = "assets/themes/twitter-kylo/js"
 
+http_stylesheets_path = "http://team.kylo.tv/assets/themes/twitter-kylo/css/"
+http_images_path = "http://team.kylo.tv/assets/themes/twitter-kylo/images/"
+http_javascripts_path = "http://team.kylo.tv/assets/themes/twitter-kylo/js/"
+
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 output_style = :compressed
