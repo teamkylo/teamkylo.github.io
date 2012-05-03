@@ -24,6 +24,10 @@ body {
   text-align: center;
 }
 
+.cancel {
+  text-decoration: line-through;
+}
+
 .navbar .logo {
   padding: 0;
 }
@@ -40,15 +44,18 @@ ul.share-links li {
 li.gh_activity {
   list-style: none;
   height: 40px;
-  padding: 1px 0;
+  margin: 2px 0;
 }
 
 li.gh_activity img {
+  float: left;
   padding: 2px;
+  margin-right: 8px;
   border: 1px solid #D0D0D0;
   background-color: #FFF;
   vertical-align: middle;
 }
+
 
 /* Footer */
 
