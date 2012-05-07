@@ -2,8 +2,8 @@
 layout: post
 title: "Getting Ready for the Grand Opening"
 description: ""
-category: 
-tags: []
+category: "About"
+tags: ["open source"]
 ---
 {% include JB/setup %}
 
