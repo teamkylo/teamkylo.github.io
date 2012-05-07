@@ -1,6 +1,5 @@
 @import "compass/css3";
 @import "compass_twitter_bootstrap";
-@import "compass/layout/sticky-footer";
 
 html, body {
   height: 100%;
@@ -17,7 +16,7 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -200px;
+  margin: 0 auto;
   .container {
     padding-top: 60px;
   }
@@ -67,28 +66,18 @@ ul.share-links li {
 }
 
 
-.push {
-    height: 200px;
-}
-
-
-/* Footer */
-
 footer {
   background-color: #333;
   color: #999;  
   padding: 20px 40px 1px 40px;
-  height: 180px;
   p {
     font-size: 85%;
   }
   .link-footer {
-    height: 149px;
     border-bottom: 1px solid #2f2f2f;
     .link-blocks > .row > .span2 {
       display: block;
-      border-right: 1px dashed #444;
-      height: 120px;
+      border: none;
       lh {
         font-weight: bold;
         font-size: 105%;
@@ -101,9 +90,6 @@ footer {
         }
       }    
     }
-    .link-blocks > .row > .span2:last-child {
-      border: none;
-    }
     .watermark {
       text-indent: -1000em;
       width: 180px;
@@ -113,7 +99,6 @@ footer {
     }
   }
   .copy-footer {
-    height: 29px;
     border-top: 1px solid #3a3a3a;
     .left > p > a {
       color: #999;
@@ -126,7 +111,8 @@ footer {
       padding-top: 3px;
     }
   }
-}
+}  
+
 
 /* The white background content wrapper */
 .content {
@@ -135,4 +121,36 @@ footer {
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   @include border-bottom-radius(6px);
   @include box-shadow(0 1px 5px rgba(0,0,0,.75));
+}
+
+/**
+ *   Small screen stuff...
+ */
+
+@media (min-width: 800px) {
+  .main {
+    margin-bottom: -200px;    
+  }
+  
+  .push {
+      height: 200px;
+  }
+  
+  /* Footer */
+  footer {
+    height: 180px;
+    .link-footer {
+      height: 149px;
+      .link-blocks > .row > .span2 {
+        border-right: 1px dashed #444;
+        height: 120px;
+      }
+      .link-blocks > .row > .span2:last-child {
+        border: none;
+      }
+    }
+    .copy-footer {
+      height: 29px;
+    }
+  }  
 }
