@@ -1,58 +1,56 @@
 ---
 layout: default
-title: "About"
+title: "Home"
 description: "Home of the Kylo Browser project"
 group: "navigation"
 weight: 1
 ---
 {% include JB/setup %}
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="hero-unit">
-        <h1>Now open.</h1>
-        <p><strong><a href="http://kylo.tv">Kylo</a></strong>, the web browser for your TV, has been released as open source under the <a href="http://www.mozilla.org/MPL/">Mozilla Public License</a>. <strong>Team Kylo</strong> is giving the community the power to change and grow the award-winning software.</p>
-        <p><a class="btn btn-primary btn-large" disabled="true"><span class="cancel">Read the press release &raquo;</span> Coming soon!</a></p>  
-      </div>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="hero-unit">
+      <h1>Now open.</h1>
+      <p><strong><a href="http://kylo.tv">Kylo</a></strong>, the web browser for your TV, has now been released as open source software under the <a href="http://www.mozilla.org/MPL/">Mozilla Public License</a>. This exciting change puts the power to evolve the award-winning software into the hands of the community. Welcome to <strong>Team Kylo.</strong></p>
+      <p><a class="btn btn-primary btn-large" disabled="true"><span class="cancel">Read the press release &raquo;</span> Coming soon!</a></p>  
     </div>
   </div>
-  
-  <div class="row-fluid">
-    <div class="span3 center">
-      <p>Looking to download the latest <br/><a href="http://kylo.tv">official release</a>?</p>
-    </div>
-    <div class="span3 center">
-      <p>Source code and docs available through <br/><a href="http://code.kylo.tv">code.kylo.tv</a></p>
-    </div>
-    <div class="span3 center">
-      <p>Need further assistance? Try our <br/><a href="http://kylo.tv/community">community forums</a>.</p>
-    </div>
-    <div class="span3 center">
-      <p>Team Kylo projects are hosted on <br/><a href="http://github.com/teamkylo">github</a></p>
-    </div>
-  </div>  
-  
-  <div class="row-fluid">
+</div>
+
+<div class="row-fluid">
+  <div class="span3 center">
+    <p>Looking to download the latest <br/><a href="http://kylo.tv">official release</a>?</p>
+  </div>
+  <div class="span3 center">
+    <p>Source code and docs available through <br/><a href="http://code.kylo.tv">code.kylo.tv</a></p>
+  </div>
+  <div class="span3 center">
+    <p>Need further assistance? Try our <br/><a href="http://kylo.tv/community">community forums</a>.</p>
+  </div>
+  <div class="span3 center">
+    <p>Team Kylo projects are hosted on <br/><a href="http://github.com/teamkylo">github</a></p>
+  </div>
+</div>  
+
+<div class="row-fluid">
 {% if site.posts != empty %}    
     <div class="span6">
-      <div class="page-header">
-        <h1>Latest News</h1>  
-      </div>
-      <ul class="posts">
-        {% for post in site.posts limit:3 %}
-        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>         
-    </div> 
+    <div class="page-header">
+      <h1>Latest News</h1>  
+    </div>
+    <ul class="posts">
+      {% for post in site.posts limit:3 %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>         
+  </div> 
 {% endif %}
     <div id="rssWidgetHost" class="span6">
-      <div class="page-header">
-        <h1>Recent Activity</h1>
-      </div>
-      <div class="well">
-        <ul id="rssWidget" class="posts"></ul>
-      </div>      
+    <div class="page-header">
+      <h1>Recent Activity</h1>
     </div>
+    <div class="well gh-activity">
+      <ul id="rssWidget" class="posts"></ul>
+    </div>      
   </div>
-
 </div>
+

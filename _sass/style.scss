@@ -2,32 +2,42 @@
 @import "compass_twitter_bootstrap";
 @import "compass/layout/sticky-footer";
 
+html, body {
+  height: 100%;
+}
+
 body {
-  padding: 60px 0 40px 0;
+ background: image-url("bg.png") repeat-x;
 }
 
 @import "compass_twitter_bootstrap_responsive";
 
-html, body {
-  /*background-color: #e5e5e5;*/
-}
-
-body {
-  /*@include background-image(linear-gradient(#f5f5f5, #e5e5e5));*/
-}
-
-.navbar .github-btn {
-  padding-top: 12px;
+/* Content area */
+.main {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px;
+  .container {
+    padding-top: 60px;
+  }
 }
 
 .center {
   text-align: center;
 }
 
+.hero-unit {
+  .xl {
+    font-size: 125%;
+  }
+}
+
 .cancel {
   text-decoration: line-through;
 }
 
+/* Navbar */
 .navbar .logo {
   padding: 0;
 }
@@ -40,40 +50,82 @@ ul.share-links li {
 }
 
 /* Github activity feed */
-
-li.gh_activity {
-  list-style: none;
-  height: 40px;
-  margin: 2px 0;
+.gh-activity {
+  li {
+    list-style: none;
+    height: 40px;
+    margin: 2px 0;
+    img {
+      float: left;
+      padding: 2px;
+      margin-right: 8px;
+      border: 1px solid #D0D0D0;
+      background-color: #FFF;
+      vertical-align: middle;
+    }
+  }
 }
 
-li.gh_activity img {
-  float: left;
-  padding: 2px;
-  margin-right: 8px;
-  border: 1px solid #D0D0D0;
-  background-color: #FFF;
-  vertical-align: middle;
+
+.push {
+    height: 200px;
 }
 
 
 /* Footer */
 
-.container > footer {
-  margin-top: 20px;
-  color: #999;
-}
-
-footer p {
-  font-size: 85%;
-}
-
-.container > footer > p > a {
-  color: #333;
-}
-
-.container > footer p {
-  text-align: center; /* center align it with the container */
+footer {
+  background-color: #333;
+  color: #999;  
+  padding: 20px 40px 1px 40px;
+  height: 180px;
+  p {
+    font-size: 85%;
+  }
+  .link-footer {
+    height: 149px;
+    border-bottom: 1px solid #2f2f2f;
+    .link-blocks > .row > .span2 {
+      display: block;
+      border-right: 1px dashed #444;
+      height: 120px;
+      lh {
+        font-weight: bold;
+        font-size: 105%;
+      }
+      li {
+        text-indent: 5px;
+        list-style: none;
+        a {
+          color: #999;
+        }
+      }    
+    }
+    .link-blocks > .row > .span2:last-child {
+      border: none;
+    }
+    .watermark {
+      text-indent: -1000em;
+      width: 180px;
+      height: 40px;
+      background: url('/assets/teamkylo_watermark.png') no-repeat center;
+      background-size: contain;
+    }
+  }
+  .copy-footer {
+    height: 29px;
+    border-top: 1px solid #3a3a3a;
+    .left > p > a {
+      color: #999;
+      text-decoration: underline;
+    }
+    .right > p {
+      float: right;
+    }
+    p {
+      padding-top: 3px;
+    }
+  }
 }
 
 /* The white background content wrapper */

@@ -57,22 +57,14 @@
       </div>
     </div>
 
-    <div class="container">
-      
-      {{ content }}
-
-      <footer>
-        <p>&copy; 2012
-            {% if site.author.url %}<a href="{{ site.author.url }}" target="new">{{ site.author.name }}</a>{% else %}
-            {{ site.author.name }}{% endif %}
-        </p>
-        <p>powered by <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>,
-          <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, and
-          <a href="http://github.com/vwall/compass-twitter-bootstrap" target="_blank">compass-twitter-bootstrap</a>
-        </p>
-      </footer>  
-
-    </div> <!-- /container -->      
+    <div class="main">
+      <div class="container">
+          {{ content }}
+      </div> <!-- /container -->      
+      <div class="push"></div>
+    </div>
+    
+    {% include themes/twitter-kylo/footer.html %}      
     
     <!-- Le javascript        
     ================================================== -->
