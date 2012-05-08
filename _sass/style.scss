@@ -1,5 +1,5 @@
-@import "compass/css3";
-@import "compass_twitter_bootstrap";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 
 html, body {
   height: 100%;
@@ -9,17 +9,12 @@ body {
  background: image-url("bg.png") repeat-x;
 }
 
-@import "compass_twitter_bootstrap_responsive";
-
 /* Content area */
 .main {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto;
-  .container {
-    padding-top: 60px;
-  }
 }
 
 .center {
@@ -75,7 +70,7 @@ footer {
   }
   .link-footer {
     border-bottom: 1px solid #2f2f2f;
-    .link-blocks > .row > .span2 {
+    ul {
       display: block;
       border: none;
       lh {
@@ -100,12 +95,13 @@ footer {
   }
   .copy-footer {
     border-top: 1px solid #3a3a3a;
-    .left > p > a {
+    .footer-link {
       color: #999;
       text-decoration: underline;
     }
-    .right > p {
+    p.copyright {
       float: right;
+      white-space: nowrap;
     }
     p {
       padding-top: 3px;
@@ -129,7 +125,10 @@ footer {
 
 @media (min-width: 800px) {
   .main {
-    margin-bottom: -200px;    
+    margin-bottom: -200px;   
+    .container {
+      padding-top: 60px;
+    } 
   }
   
   .push {
@@ -141,12 +140,12 @@ footer {
     height: 180px;
     .link-footer {
       height: 149px;
-      .link-blocks > .row > .span2 {
+      ul {
         border-right: 1px dashed #444;
         height: 120px;
       }
-      .link-blocks > .row > .span2:last-child {
-        border: none;
+      .watermark {
+        float: right;
       }
     }
     .copy-footer {
