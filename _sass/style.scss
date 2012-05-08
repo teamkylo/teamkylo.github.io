@@ -1,5 +1,6 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
 
 html, body {
   height: 100%;
@@ -19,6 +20,10 @@ body {
 
 .center {
   text-align: center;
+}
+
+.push {
+  height: 0;
 }
 
 .hero-unit {
@@ -62,9 +67,10 @@ ul.share-links li {
 
 
 footer {
+  @include box-sizing(border-box);
   background-color: #333;
   color: #999;  
-  padding: 20px 40px 1px 40px;
+  padding: 20px 0 0 0;
   p {
     font-size: 85%;
   }
@@ -91,9 +97,6 @@ footer {
       background: url('/assets/teamkylo_watermark.png') no-repeat center;
       background-size: contain;
     }
-    .right {
-      float: right;
-    }
   }
   .copy-footer {
     border-top: 1px solid #3a3a3a;
@@ -101,12 +104,11 @@ footer {
       color: #999;
       text-decoration: underline;
     }
-    p.copyright {
-      float: right;
-      white-space: nowrap;
-    }
     p {
       padding-top: 3px;
+    }
+    p.copyright {
+      white-space: nowrap;
     }
   }
 }  
@@ -125,33 +127,52 @@ footer {
  *   Small screen stuff...
  */
 
-@media (min-width: 800px) {
+@media (min-width: 979px) {
   .main {
-    margin-bottom: -200px;   
     .container {
       padding-top: 60px;
-    } 
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    .copy-footer {
+      p {
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-bottom: -200px; 
   }
   
   .push {
       height: 200px;
   }
-  
-  /* Footer */
+
   footer {
-    height: 180px;
-    > .link-footer {
-      height: 149px;
-      > div {
+    height: 200px;
+    .link-footer {
+      > div > ul {
         border-right: 1px dashed #444;
         height: 120px;
       }
-      > div:nth-last-child(-n + 2) {
+      > div:nth-last-child(-n + 2) > ul {
         border: none;
       }
     }
-    > .copy-footer {
+    .copy-footer {
       height: 29px;
+      .copyright {
+        float: right;
+      }
     }
+    .logos {
+      float: right;
+    }    
   }  
 }
