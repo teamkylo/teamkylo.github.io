@@ -72,7 +72,6 @@ footer {
     border-bottom: 1px solid #2f2f2f;
     ul {
       display: block;
-      border: none;
       lh {
         font-weight: bold;
         font-size: 105%;
@@ -91,6 +90,9 @@ footer {
       height: 40px;
       background: url('/assets/teamkylo_watermark.png') no-repeat center;
       background-size: contain;
+    }
+    .right {
+      float: right;
     }
   }
   .copy-footer {
@@ -138,17 +140,17 @@ footer {
   /* Footer */
   footer {
     height: 180px;
-    .link-footer {
+    > .link-footer {
       height: 149px;
-      ul {
+      > div {
         border-right: 1px dashed #444;
         height: 120px;
       }
-      .watermark {
-        float: right;
+      > div:nth-last-child(-n + 2) {
+        border: none;
       }
     }
-    .copy-footer {
+    > .copy-footer {
       height: 29px;
     }
   }  
