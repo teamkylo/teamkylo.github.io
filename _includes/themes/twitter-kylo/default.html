@@ -100,7 +100,7 @@ $(document).ready(
           var blogPost=data.query.results.entry;
           $.each(blogPost,function(index, blogPost){
             //$('#rssWidget').append("<li><a href='"+blogPost.link.href+"'>"+blogPost.title.content+"</a></li>");
-            $('#rssWidget').append("<li class='gh_activity'><a href='" + blogPost.author.uri + "'><img src='" + blogPost.thumbnail.url + "' width='" + blogPost.thumbnail.width + "' height='" + blogPost.thumbnail.height + "'/></a> <a href='" + blogPost.link.href + "' target='_blank'>" + blogPost.title.content + "</a></li>");
+            $('#rssWidget').append("<li class='gh_activity'><a href='" + blogPost.author.uri + "'><img src='" + blogPost.thumbnail.url + "' width='" + blogPost.thumbnail.width + "' height='" + blogPost.thumbnail.height + "'/></a> <a href='" + blogPost.link.href + "' target='_blank'>" + blogPost.title + "</a></li>");
           });
           $('#rssWidgetHost').fadeIn('slow');  
         });  
