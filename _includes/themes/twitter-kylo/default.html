@@ -84,8 +84,8 @@ $(document).ready(
     if ($("#rssWidget").length > 0 &&
         $("#rssWidgetHost").length > 0) {
       
-      //feed = 'https://github.com/teamkylo/kylo-browser/commits/master.atom';
-      feed = 'https://github.com/organizations/teamkylo/kwood1138.private.atom?token=83a7b5894bfce6f4b5b4d03b07974b1f';
+      feed = 'https://github.com/teamkylo/kylo-browser/commits/master.atom';
+      //feed = 'https://github.com/organizations/teamkylo/kwood1138.private.atom?token=83a7b5894bfce6f4b5b4d03b07974b1f';
       
       $.YQL = function(query, callback) {
           var encodedQuery = encodeURIComponent(query.toLowerCase()),
