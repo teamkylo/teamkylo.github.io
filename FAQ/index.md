@@ -18,7 +18,7 @@ We are making Kylo available as open source software so that more people can enj
 
 ## What elements of Kylo have been open sourced?
 
-The browser components of Kylo have been open sourced.  This includes the browser controls and user interface functions such as URL entry and bookmarks.  It also includes several native components that handle functions such as keyboard entry and key mapping.  The web portal is not open sourced.
+The browser components of Kylo have been open sourced.  This includes the browser controls and user interface functions such as URL entry and bookmarks.  It also includes several native components that handle functions such as keyboard entry and key mapping.  The web portal was simplified in 2016 and the source code is available on [GitHub](https://github.com/teamkylo/kylo-connect/).
 
 ## Why did we choose MPL 2.0 as the license?
 
