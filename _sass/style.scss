@@ -97,6 +97,14 @@ footer {
       background: url('/assets/teamkylo_watermark.png') no-repeat center;
       background-size: contain;
     }
+    .poweredby {
+        display: block;
+        text-indent: -1000em;
+        background: url('/assets/powered-by-mozilla-reversed.png') no-repeat center;
+        height: 55px;
+        width: 180px;
+        padding-top: 40px
+    }
   }
   .copy-footer {
     border-top: 1px solid #3a3a3a;
